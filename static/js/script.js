@@ -42,3 +42,6 @@ function mouseMoveEvent(e) {
   }
 }
 
+function mouseUpEvent() {
+  canDraw = false;
+}
