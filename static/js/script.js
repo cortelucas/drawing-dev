@@ -36,3 +36,9 @@ function mouseDownEvent(e) {
   mouseY = e.pageY - screen.offsetTop;
 }
 
+function mouseMoveEvent(e) {
+  if(canDraw) {
+    draw(e.pageX, e.pageY)
+  }
+}
+
