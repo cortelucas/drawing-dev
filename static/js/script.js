@@ -62,3 +62,8 @@ function draw(x, y) {
   mouseX = pointX;
   mouseY = pointY;
 }
+
+function clearScreen() {
+  screenContext.setTransform(1, 0, 0, 1, 0, 0);
+  screenContext.clearRect(0, 0, screenContext.canvas.width, screenContext.canvas.height);
+}
