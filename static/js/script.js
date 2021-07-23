@@ -36,34 +36,3 @@ function mouseDownEvent(e) {
   mouseY = e.pageY - screen.offsetTop;
 }
 
-function mouseMoveEvent(e) {
-  if(canDraw) {
-    draw(e.pageX, e.pageY)
-  }
-}
-
-function mouseUpEvent() {
-  canDraw = false;
-}
-
-function draw(x, y) {
-  let pointX = x - screen.offsetLeft;
-  let pointY = y - screen.offsetTop;
-
-  screenContext.beginPath();
-  screenContext.lineWidth = 4;
-  screenContext.lineJoin = 'round';
-  screenContext.moveTo(mouseX, mouseY);
-  screenContext.lineTo(pointX, pointY);
-  screenContext.closePath();
-  screenContext.strokeStyle = currentColor;
-  screenContext.stroke();
-
-  mouseX = pointX;
-  mouseY = pointY;
-}
-
-function clearScreen() {
-  screenContext.setTransform(1, 0, 0, 1, 0, 0);
-  screenContext.clearRect(0, 0, screenContext.canvas.width, screenContext.canvas.height);
-}
