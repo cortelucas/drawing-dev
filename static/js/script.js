@@ -45,3 +45,20 @@ function mouseMoveEvent(e) {
 function mouseUpEvent() {
   canDraw = false;
 }
+
+function draw(x, y) {
+  let pointX = x - screen.offsetLeft;
+  let pointY = y - screen.offsetTop;
+
+  screenContext.beginPath();
+  screenContext.lineWidth = 4;
+  screenContext.lineJoin = 'round';
+  screenContext.moveTo(mouseX, mouseY);
+  screenContext.lineTo(pointX, pointY);
+  screenContext.closePath();
+  screenContext.strokeStyle = currentColor;
+  screenContext.stroke();
+
+  mouseX = pointX;
+  mouseY = pointY;
+}
